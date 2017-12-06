@@ -5,8 +5,12 @@
   </ion-header>
   
   <ion-content padding>
-    <h2>Search Page</h2>
-
-    <button [navPush]="searchArticle">Search Article</button>
-    <button [navPush]="searchImage">Search Image</button>
+      <button ion-button icon-left color="light" style="height: 50%; width: 100%;" [navPush]="searchArticle">
+        <ion-icon name="book"></ion-icon>
+        Article Search
+      </button>
+      <button ion-button icon-left color="dark" style="height: 50%; width: 100%;" [navPush]="searchImage">
+          <ion-icon name="camera"></ion-icon>
+          Image Search
+        </button>
   </ion-content>

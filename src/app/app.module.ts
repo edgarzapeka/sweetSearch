@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { IonicStorageModule } from '@ionic/storage';
 
 
-import { AboutPage } from '../pages/about/about';
+import { MyArticles } from '../pages/my_articles/my_articles'
 import { MyImages } from '../pages/my_images/my_images';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -20,7 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    MyArticles,
     MyImages,
     HomePage,
     TabsPage,
@@ -37,7 +37,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    MyArticles,
     MyImages,
     HomePage,
     TabsPage,

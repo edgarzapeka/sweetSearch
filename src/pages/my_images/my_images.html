@@ -1,12 +1,16 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Search an Image</ion-title>
+    <ion-title>My Images</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="update()">
+        <ion-icon name="md-refresh"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+  
 </ion-header>
 
 <ion-content padding>
-  <h2>My Images</h2>
-
   <ion-list>
       <ion-card *ngFor="let image of images">
           <img src="{{image.url}}"/>

@@ -5,8 +5,6 @@
   </ion-header>
   
   <ion-content padding>
-    <h2>Image</h2>
-
     <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-list>
         <ion-card *ngFor="let item of items">

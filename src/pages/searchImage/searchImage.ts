@@ -26,13 +26,14 @@ export class SearchImage {
     }
 
     saveImage(object){
-        try{
-            this.storage.get('images').then(value => {
+
+        this.storage.get('images').then(value => {
             value.push(new Image(object.urls.small, object.user.name, "unsplash"));
             this.storage.set('images', value);
-            });
-        } catch(e){
-            this.storage.set('images', []);
-        }
+        }).catch(e => {
+            var images = [];
+            images.push(new Image(object.urls.small, object.user.name, "unsplash"));
+            this.storage.set('images', images);
+        });
     }
 }

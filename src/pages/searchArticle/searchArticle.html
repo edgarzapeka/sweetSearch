@@ -5,18 +5,27 @@
   </ion-header>
   
   <ion-content padding>
-    <h2>Articles</h2>
-
     <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 
     <ion-list>
-      <ion-item *ngFor="let item of items">
-              <ion-thumbnail item-start>
-              <img src="assets/imgs/nytimes_logo.png">
-              </ion-thumbnail>
-              <h2> {{item.headline.main}}</h2>
-              <p> {{item.snippet}}</p>
-              <button (click)='openBrowser(item.web_url)' ion-button clear item-end>Read More</button>
+      <ion-item *ngFor="let item of items" text-wrap>
+          <ion-card>
+              <img src="assets/imgs/ny_logo.jpg" style="width: 80px; height: 80px; float: left; padding: 3px;">
+              <ion-card-content >
+                <ion-card-title >
+                    {{item.headline.main}}
+                  </ion-card-title>
+                <p>
+                    {{item.snippet}}
+                </p>
+              </ion-card-content>
+              <ion-grid>
+                  <ion-row justify-content-between>
+                      <ion-icon name="globe" style="font-size: 40px;" (click)="openBrowser(item.web_url)"></ion-icon>
+                      <ion-icon name="bookmark" style="font-size: 40px;" align-self-end (click)="saveArticle(item)"></ion-icon>
+                  </ion-row>
+              </ion-grid>
+          </ion-card>
     </ion-item>
     </ion-list>
 

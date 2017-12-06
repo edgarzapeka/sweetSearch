@@ -16,15 +16,23 @@ export class MyImages implements OnInit{
   }
 
   ngOnInit(){
-    try{
-      this.storage.get('images').then((val) => {
-        this.images = val;
-      });
-    } catch(e){
-      console.log('Error');
-    }
+    this.update();
   }
 
+  update(){
+      this.storage.get('images').then((val) => {
+        this.images = val;
+      }).catch(e => {
+        this.storage.set('images', []);
+      });
+
+    }
+
   delete(image){
+    this.storage.get('images').then(val => {
+      this.storage.set('images', val.filter(value => value.url != image.url))
+    }).catch(e => {
+      console.log(e);
+    });
   }
 }
