@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Search an Article</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <h2>Articles</h2>
+
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+    <ion-list>
+      <ion-item *ngFor="let item of items">
+              <ion-thumbnail item-start>
+              <img src="assets/imgs/nytimes_logo.png">
+              </ion-thumbnail>
+              <h2> {{item.headline.main}}</h2>
+              <p> {{item.snippet}}</p>
+              <button (click)='openBrowser(item.web_url)' ion-button clear item-end>Read More</button>
+    </ion-item>
+    </ion-list>
+
+  </ion-content>

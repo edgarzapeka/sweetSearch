@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Search an Image</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>My Images</h2>
+
+  <ion-list>
+      <ion-card *ngFor="let image of images">
+          <img src="{{image.url}}"/>
+          <ion-card-content>
+            <ion-card-title>
+             @Author {{image.author}}
+              </ion-card-title>
+          </ion-card-content>
+          <button ion-button color="danger" (click)="delete(image)">Delete</button>
+        </ion-card>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Search an Image</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <h2>Image</h2>
+
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+        <ion-card *ngFor="let item of items">
+            <img src="{{item.urls.small}}"/>
+            <ion-card-content>
+              <ion-card-title>
+               @Author {{item.user.name}}
+                </ion-card-title>
+                <button ion-button color="secondary" outline (click)="saveImage(item)">Save</button>
+            </ion-card-content>
+          </ion-card>
+    </ion-list>
+  </ion-content>
