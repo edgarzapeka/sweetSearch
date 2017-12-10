@@ -34,5 +34,7 @@ export class MyImages implements OnInit{
     }).catch(e => {
       console.log(e);
     });
+    this.images = [];
+    this.update();
   }
 }
